@@ -192,8 +192,8 @@ mu_range = np.arange(0.05, 0.5, 0.05)
 
 for average_degree in average_degree_range:
     for mu in mu_range:
-        average_degree = int(average_degree)
-        mu = int(mu)
+        # average_degree = int(average_degree)
+        # mu = int(mu)
 
         intri_ts1 = []
         intri_ts2 = []
@@ -268,5 +268,5 @@ for average_degree in average_degree_range:
         intrinsic_timescale = np.vstack((np.array(intri_ts1), np.array(intri_ts2), np.array(intri_ts3)))
         diff_1_2 = [np.diff(intrinsic_timescale.T[i])[0] for i in range(500)]
         diff_2_3 = [np.diff(intrinsic_timescale.T[i])[1] for i in range(500)]
-        print(int(average_degree), '\t', int(mu), '\t', np.mean(intri_ts1),'\t',  np.std(intri_ts1), '\t', np.mean(intri_ts2), '\t', np.std(intri_ts2), '\t', np.mean(intri_ts3), '\t', np.std(intri_ts3),
+        print(average_degree, '\t', mu, '\t', np.mean(intri_ts1),'\t',  np.std(intri_ts1), '\t', np.mean(intri_ts2), '\t', np.std(intri_ts2), '\t', np.mean(intri_ts3), '\t', np.std(intri_ts3),
                 '\t', np.mean(diff_1_2), '\t', np.std(diff_1_2), '\t', np.mean(diff_2_3), '\t', np.std(diff_2_3))
