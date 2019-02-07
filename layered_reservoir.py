@@ -187,8 +187,8 @@ def make_layered_network(N, average_degree, community_number, mu):
 
 num_community=4
 
-average_degree_range = np.arange(10, 50, 5)
-mu_range = np.arange(0.05, 0.5, 0.05)
+average_degree_range = np.arange(15, 50, 5)
+mu_range = np.arange(0.1, 0.5, 0.05)
 
 for average_degree in average_degree_range:
     for mu in mu_range:
@@ -264,6 +264,7 @@ for average_degree in average_degree_range:
             intri_ts1.append(ts1)
             intri_ts2.append(ts2)
             intri_ts3.append(ts3)
+            # print(trial, ts1, ts2, ts3)
 
         intrinsic_timescale = np.vstack((np.array(intri_ts1), np.array(intri_ts2), np.array(intri_ts3)))
         diff_1_2 = [np.diff(intrinsic_timescale.T[i])[0] for i in range(500)]
